@@ -27,7 +27,7 @@ function createCard(cardNumber){
     card.append(cardText)
 
     card.addEventListener('click', () => {
-        let text = card.firstChild.innerText !== cardNumber.toString() ? cardNumber : randomInfo[Math.floor(Math.random()*10)]
+        let text = cardText.innerText !== cardNumber.toString() ? cardNumber : randomInfo[Math.floor(Math.random()*10)]
         cardText.replaceChildren(text)
         card.replaceChildren(cardText)
     })
