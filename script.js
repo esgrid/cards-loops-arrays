@@ -20,14 +20,14 @@ numberOfCards.addEventListener('input', () => {
 
 function createCard(cardNumber){
     const card = document.createElement('div')
-    card.classList.add("card", cardNumber)
+    card.classList.add("card")
 
     const cardText = document.createElement('p')
     cardText.append(cardNumber.toString())
     card.append(cardText)
 
     card.addEventListener('click', () => {
-        let text = card.firstChild.innerText !== card.classList[1] ? card.classList[1] : randomInfo[Math.floor(Math.random()*10)]
+        let text = card.firstChild.innerText !== cardNumber.toString() ? cardNumber : randomInfo[Math.floor(Math.random()*10)]
         cardText.replaceChildren(text)
         card.replaceChildren(cardText)
     })
